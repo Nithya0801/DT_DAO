@@ -2,50 +2,66 @@ package com.Model;
 
 import java.io.Serializable;
 
-public class User implements Serializable 
-{
- private String name,email,phone,address,country;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public String getEmail() {
-	return email;
-}
+@Entity(name = "User")
+public class User {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	@Column(name = "name")
+	private String name;
+	@Column(name = "email")
+	private String email;
+	@Column(name = "phone")
+	private String phone;
+	@Column(name = "address")
+	private String address;
+	@Column(name = "country")
+	private String country;
 
-public void setEmail(String email) {
-	this.email = email;
-}
+	public String getEmail() {
+		return email;
+	}
 
-public String getPhone() {
-	return phone;
-}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-public void setPhone(String phone) {
-	this.phone = phone;
-}
+	public String getPhone() {
+		return phone;
+	}
 
-public String getAddress() {
-	return address;
-}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 
+	public String getAddress() {
+		return address;
+	}
 
-public void setAddress(String address) {
-	this.address = address;
-}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 
-public String getCountry() {
-	return country;
-}
+	public String getCountry() {
+		return country;
+	}
 
-public void setCountry(String country) {
-	this.country = country;
-}
+	public void setCountry(String country) {
+		this.country = country;
+	}
 
-public String getName() {
-	return name;
-}
+	public String getName() {
+		return name;
+	}
 
-public void setName(String name) {
-	this.name = name;
-}
- 
- 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }
